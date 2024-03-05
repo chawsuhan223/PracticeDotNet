@@ -3,6 +3,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Data;
 using System.Data.SqlClient;
 using PracticeDotNet.AdoDotNet;
+using PracticeDotNet.Dapper;
 
 //Console.WriteLine("Hello, World!");
 
@@ -70,10 +71,22 @@ foreach(DataRow DR in Table.Rows )
 }
 */
 
-AdoDotNetCRUD ForTest = new AdoDotNetCRUD();
+//For AdoDotNet
+//AdoDotNetCRUD ForTest = new AdoDotNetCRUD();
 //ForTest.Read();
 //ForTest.Edit(1);
 //ForTest.Edit(10);
 //ForTest.Create("Khant Htet Linn", "Yangon", "T_Shirt");
 //ForTest.Update(9,"Khant Htet ", "Hlaing", "Jeans");
-ForTest.Delete(8);
+//ForTest.Delete(8);
+
+//For Dapper
+DapperCRUD ForTest = new DapperCRUD();
+//ForTest.Read();
+//ForTest.Edit(1);
+//ForTest.Edit(10);
+//ForTest.Create("Mg Khant Htet Linn", "Yangon", "T_Shirt");
+//ForTest.Create("Chaw ", "Yangon", "T_Shirt");
+ //ForTest.Update(14, "Chaw Su Han ", "Hlaing", "Jeans");
+//ForTest.Delete(14);
+ForTest.Delete(13);
