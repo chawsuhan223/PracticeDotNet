@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using PracticeDotNet.AdoDotNet;
 using PracticeDotNet.Dapper;
+using PracticeDotNet.EFCore;
 
 //Console.WriteLine("Hello, World!");
 
@@ -81,12 +82,23 @@ foreach(DataRow DR in Table.Rows )
 //ForTest.Delete(8);
 
 //For Dapper
-DapperCRUD ForTest = new DapperCRUD();
+//DapperCRUD ForTest = new DapperCRUD();
 //ForTest.Read();
 //ForTest.Edit(1);
 //ForTest.Edit(10);
 //ForTest.Create("Mg Khant Htet Linn", "Yangon", "T_Shirt");
 //ForTest.Create("Chaw ", "Yangon", "T_Shirt");
- //ForTest.Update(14, "Chaw Su Han ", "Hlaing", "Jeans");
+//ForTest.Update(14, "Chaw Su Han ", "Hlaing", "Jeans");
 //ForTest.Delete(14);
-ForTest.Delete(13);
+//ForTest.Delete(13);
+
+//For EFCore
+//EFCoreCRUD ForTest = new EFCoreCRUD();
+//ForTest.Read();
+//ForTest.Edit(1);
+//ForTest.Edit(10);
+//ForTest.Create("Mg Khant Htet Linn", "Yangon", "T_Shirt");
+//ForTest.Create("Chaw ", "Yangon", "T_Shirt");
+//ForTest.Update(14, "Chaw Su Han ", "Hlaing", "Jeans");
+//ForTest.Delete(14);
+//ForTest.Delete(13);

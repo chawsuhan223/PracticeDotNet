@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PracticeDotNet.AdoDotNet.Models
+namespace PracticeDotNet.Models
 {
     [Table("C#_Table")]//equal table
     public class Model
