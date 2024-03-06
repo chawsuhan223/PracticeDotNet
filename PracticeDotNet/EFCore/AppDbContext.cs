@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace PracticeDotNet.EFCore
 {
-    internal class AppDbContext:DbContext
+    public class AppDbContext:DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -21,5 +22,7 @@ namespace PracticeDotNet.EFCore
             };
             optionsBuilder.UseSqlServer(SqlConnection.ConnectionString);
         }
+        public DbSet<Model> TestModel { get; set; }//Mapping
     }
+ 
 }
