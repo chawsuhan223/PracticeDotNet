@@ -82,23 +82,24 @@ foreach(DataRow DR in Table.Rows )
 //ForTest.Delete(8);
 
 //For Dapper
-//DapperCRUD ForTest = new DapperCRUD();
-//ForTest.Read();
-//ForTest.Edit(1);
-//ForTest.Edit(10);
-//ForTest.Create("Mg Khant Htet Linn", "Yangon", "T_Shirt");
-//ForTest.Create("Chaw ", "Yangon", "T_Shirt");
-//ForTest.Update(14, "Chaw Su Han ", "Hlaing", "Jeans");
-//ForTest.Delete(14);
-//ForTest.Delete(13);
+//DapperCRUD ForTest1 = new DapperCRUD();
+//ForTest1.Read();
+//ForTest1.Edit(1);
+//ForTest1.Edit(10);
+//ForTest1.Create("Mg Khant Htet Linn", "Yangon", "T_Shirt");
+//ForTest1.Create("Chaw ", "Yangon", "T_Shirt");
+//ForTest1.Update(14, "Chaw Su Han ", "Hlaing", "Jeans");
+//ForTest1.Delete(14);
+//ForTest1.Delete(13);
 
 //For EFCore
-//EFCoreCRUD ForTest = new EFCoreCRUD();
-//ForTest.Read();
-//ForTest.Edit(1);
-//ForTest.Edit(10);
-//ForTest.Create("Mg Khant Htet Linn", "Yangon", "T_Shirt");
-//ForTest.Create("Chaw ", "Yangon", "T_Shirt");
-//ForTest.Update(14, "Chaw Su Han ", "Hlaing", "Jeans");
-//ForTest.Delete(14);
-//ForTest.Delete(13);
+EFCoreCRUD efcorecrud = new EFCoreCRUD();
+efcorecrud.Read();
+//efcorecrud.Edit(1);
+//efcorecrud.Edit(10);
+//efcorecrud.Create("Mg Khant Htet Linn", "Yangon", "T_Shirt");
+//efcorecrud.Create("Chaw ", "Yangon", "T_Shirt");
+//efcorecrud.Update(14, "Chaw Su Han ", "Hlaing", "Jeans");
+//efcorecrud.Delete(14);
+//efcorecrud.Delete(13);
+Console.ReadKey();

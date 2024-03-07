@@ -27,9 +27,9 @@ namespace PracticeDotNet.Dapper
                 ,[Item_Name]
             FROM [dbo].[C#_Table]";
             using IDbConnection Test = new SqlConnection(SqlConnect.ConnectionString);//Create SQL Connection
-            List<Model> lst = Test.Query<Model>(query).ToList();//equal Fill(Mapping)
+            List<BlogModel> lst = Test.Query<BlogModel>(query).ToList();//equal Fill(Mapping)
 
-            foreach (Model item in lst)
+            foreach (BlogModel item in lst)
             {
                 Console.WriteLine(item.Id);
                 Console.WriteLine(item.Customer_Name);
@@ -37,9 +37,10 @@ namespace PracticeDotNet.Dapper
                 Console.WriteLine(item.Item_Name);
             }
         }//Read
+
         public void Edit(int id)//Edit
-        { 
-            
+        {
+
             string query = @"SELECT [Id]
                       ,[Customer_Name]
                       ,[Customer_Address]
@@ -47,7 +48,7 @@ namespace PracticeDotNet.Dapper
                   FROM [dbo].[C#_Table] Where Id = @Id";//Where Condition
 
             using IDbConnection Db = new SqlConnection(SqlConnect.ConnectionString);
-            var item = Db.Query<Model>(query, new { Id = id }).FirstOrDefault();
+            var item = Db.Query<BlogModel>(query, new { Id = id }).FirstOrDefault();
             if (item is null)
             {
                 Console.WriteLine("No Data Found");
@@ -58,9 +59,10 @@ namespace PracticeDotNet.Dapper
             Console.WriteLine(item.Customer_Address);
             Console.WriteLine(item.Item_Name);
         }//Edit
+
         public void Create(string CusName, string Address, string ItemName)//Create
         {
-          string query = @"insert into [dbo].[c#_table]
+            string query = @"insert into [dbo].[c#_table]
            ([customer_name]
            ,[customer_address]
            ,[item_name])
@@ -69,7 +71,7 @@ namespace PracticeDotNet.Dapper
            ,@Customer_Address
            ,@Item_Name)";
 
-            Model model = new Model()
+            BlogModel model = new BlogModel()
             {
                 Customer_Name = CusName,
                 Customer_Address = Address,
@@ -77,19 +79,20 @@ namespace PracticeDotNet.Dapper
             };
             using IDbConnection dbconnection = new SqlConnection(SqlConnect.ConnectionString);
             int result = dbconnection.Execute(query, model);//mapping
-            //int result=dbconnection.Execute(query, new { Customer_Name = CusName, Customer_Address = Address, Item_Name = ItemName });
+            //int result = dbconnection.Execute(query, new { Customer_Name = CusName, Customer_Address = Address, Item_Name = ItemName });
             string message = result > 0 ? "Creating Successful" : "Creating Failed";
             Console.WriteLine(message);
 
         }//Create
+
         public void Update(int id, string CusName, string Address, string ItemName)//Create
         {
-                       string query = @"UPDATE [dbo].[C#_Table]
+            string query = @"UPDATE [dbo].[C#_Table]
             SET   [Customer_Name] = @Customer_Name,
                   [Customer_Address] =Customer_Address,
                   [Item_Name] = @Item_Name
                    WHERE Id=@id";
-            Model model = new Model()
+            BlogModel model = new BlogModel()
             {
                 Id = id,
                 Customer_Name = CusName,
@@ -97,26 +100,27 @@ namespace PracticeDotNet.Dapper
                 Item_Name = ItemName
             };
             using IDbConnection dbconnection = new SqlConnection(SqlConnect.ConnectionString);
-            int result = dbconnection.Execute(query, model);//mapping
-            string message = result > 0 ? "Updating Successful" : "Upaating Failed";
-            Console.WriteLine(message);
+            int result1 = dbconnection.Execute(query, model);//mapping
+            string message1 = result1 > 0 ? "Updating Successful" : "Upaating Failed";
+            Console.WriteLine(message1);
 
         }//Update
+
         public void Delete(int id)//Delete
         {
-      //      string query = @"DELETE FROM [dbo].[C#_Table]
-      //WHERE Id=@TestId";
+            //      string query = @"DELETE FROM [dbo].[C#_Table]
+            //WHERE Id=@TestId";
             string query = @"DELETE FROM [dbo].[C#_Table]
       WHERE Id=@Id";
-            Model model = new Model()
+            BlogModel model = new BlogModel()
             {
                 Id = id,
             };
             using IDbConnection dbConnection = new SqlConnection(SqlConnect.ConnectionString);
-            var result = dbConnection.Execute(query, model);
+            var result2 = dbConnection.Execute(query, model);
             //var result = dbConnection.Execute(query, new { TestId = id });
-            string message = result > 0 ? "Deleting Successful" : "Deleting Failed";
-            Console.WriteLine(message);
+            string message2 = result2 > 0 ? "Deleting Successful" : "Deleting Failed";
+            Console.WriteLine(message2);
 
         }//Delete
     }

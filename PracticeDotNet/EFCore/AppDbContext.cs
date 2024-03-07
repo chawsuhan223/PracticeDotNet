@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using PracticeDotNet.Models;
 
 namespace PracticeDotNet.EFCore
 {
@@ -18,11 +19,12 @@ namespace PracticeDotNet.EFCore
                 DataSource=".",
                 InitialCatalog="C#TestDb",
                 UserID="sa",
-                Password="sasa@123"
+                Password="sasa@123",
+                TrustServerCertificate=true,
             };
             optionsBuilder.UseSqlServer(SqlConnection.ConnectionString);
         }
-        public DbSet<Model> TestModel { get; set; }//Mapping
+        public DbSet<TestModel> Model { get; set; }//Mapping
     }
  
 }

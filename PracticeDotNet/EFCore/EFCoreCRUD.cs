@@ -1,11 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using PracticeDotNet.Models;
-//using Microsoft.EntityFrameworkCore.Metadata.de
+using System.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using PracticeDotNet.Models;
+using System.Reflection.Metadata;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using System.Data;
 namespace PracticeDotNet.EFCore
 {
     public class EFCoreCRUD
@@ -13,9 +16,9 @@ namespace PracticeDotNet.EFCore
         public void Read()
         {
             AppDbContext db = new AppDbContext();//Because AppDbContext include SqlConnectionStringBuilder
-            //List<Microsoft.EntityFrameworkCore.Metadata.Internal.Model> lst = db.TestModel.ToList();
-            List<Model> lst = db.TestModel.ToList();
-            foreach (Model item in lst)
+            List<TestModel> lst = db.Model.ToList();
+
+            foreach (TestModel item in lst)
             {
                 Console.WriteLine(item.Id);
                 Console.WriteLine(item.Customer_Name);

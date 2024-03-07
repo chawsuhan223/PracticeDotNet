@@ -10,13 +10,14 @@ using System.Threading.Tasks;
 namespace PracticeDotNet.Models
 {
     [Table("C#_Table")]//equal table
-    public class Model
+    public class TestModel
     {
         [Key]
         //[Column("Id")]//column=field if not equal Database
         public int Id { get; set; }
-        //[Column("Customer_Name")]
+
         public string Customer_Name { get; set; }
+
         public string Customer_Address { get; set; }
 
         public string Item_Name { get; set; }
