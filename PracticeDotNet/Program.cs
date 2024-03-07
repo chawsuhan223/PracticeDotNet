@@ -94,12 +94,11 @@ foreach(DataRow DR in Table.Rows )
 
 //For EFCore
 EFCoreCRUD efcorecrud = new EFCoreCRUD();
-efcorecrud.Read();
-//efcorecrud.Edit(1);
-//efcorecrud.Edit(10);
-//efcorecrud.Create("Mg Khant Htet Linn", "Yangon", "T_Shirt");
-//efcorecrud.Create("Chaw ", "Yangon", "T_Shirt");
-//efcorecrud.Update(14, "Chaw Su Han ", "Hlaing", "Jeans");
-//efcorecrud.Delete(14);
-//efcorecrud.Delete(13);
+//efcorecrud.Read();
+//efcorecrud.Edit(11);
+//efcorecrud.Edit(13);
+//efcorecrud.Create("CSH", "Yamethin", "Coffee");
+//efcorecrud.Update(11,"Chaw Su Han ","Hlaing","Jeans");
+efcorecrud.Delete(11);
+efcorecrud.Delete(12);
 Console.ReadKey();
